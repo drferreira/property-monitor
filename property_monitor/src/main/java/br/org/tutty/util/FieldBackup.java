@@ -26,15 +26,15 @@ public class FieldBackup {
 	}
 	
 	public void analyzeChangeValue(Object newValue){
-		if(value != newValue){
+		if(!newValue.equals(value)){
 			changedFlag = Boolean.TRUE;
 			
 		}else {
 			changedFlag = Boolean.FALSE;
 		}
 	}
-	
-	public Boolean hasChanged(){
+
+    public Boolean hasChanged(){
 		return changedFlag;
 	}
 }
