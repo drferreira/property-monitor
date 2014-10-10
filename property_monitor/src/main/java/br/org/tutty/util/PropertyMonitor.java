@@ -37,4 +37,8 @@ public class PropertyMonitor implements PropertyChangeListener, Serializable {
 	public Boolean hasChanged() {
 		return backupManager.hasAnyChanged();
 	}
+
+    public PropertyChangeSupport getPropertyChangeSupport() {
+        return propertyChangeSupport;
+    }
 }
