@@ -13,11 +13,11 @@ import br.org.tutty.util.log.Logger;
 public class PropertyMonitor implements PropertyChangeListener, Serializable {
 	private static final long serialVersionUID = -4337997241956326414L;
 
-	public PropertyChangeSupport propertyChangeSupport;
+	private PropertyChangeSupport propertyChangeSupport;
 
-	protected Object entity;
+    private Object entity;
 
-	private BackupManager backupManager;
+    private BackupManager backupManager;
 
 	public PropertyMonitor(Object entity) {
 		this.entity = entity;

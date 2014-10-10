@@ -13,10 +13,6 @@ public class FieldBackup {
          this.changedFlag = Boolean.FALSE;
      }
 
-	public void setChangedFlag(Boolean changedFlag) {
-		this.changedFlag = changedFlag;
-	}
-
 	public String getName() {
 		return name;
 	}
