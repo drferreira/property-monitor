@@ -38,6 +38,10 @@ public class PropertyMonitor implements PropertyChangeListener, Serializable {
 		return backupManager.hasAnyChanged();
 	}
 
+    public void resetCheckingChanges(){
+        backupManager = new BackupManager();
+    }
+
     public PropertyChangeSupport getPropertyChangeSupport() {
         return propertyChangeSupport;
     }
