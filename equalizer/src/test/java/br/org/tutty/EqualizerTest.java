@@ -68,4 +68,17 @@ public class EqualizerTest {
 
         assertEquals(source.sourceShouldFillTargetValues, target.targetShouldFillTargetValues);
     }
+
+    @Test
+    public void shouldIgnoteFieldWithoutAnnotation() throws IllegalAccessException, NoSuchFieldException {
+        TargetDto target = new TargetDto();
+        SourceDto source = new SourceDto();
+
+        Equalizer.equalize(target, source);
+
+        System.out.println(source.withoutAnnotation);
+        System.out.println(target.withoutAnnotation);
+
+        assertNotEquals(source.withoutAnnotation, target.withoutAnnotation);
+    }
 }

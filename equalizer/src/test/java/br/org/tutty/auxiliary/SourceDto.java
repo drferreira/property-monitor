@@ -18,4 +18,6 @@ public class SourceDto {
 
     @Equalization(name = "shouldFillObjectWithTypeSpecific")
     public OtherDto type  = new OtherDto();
+
+    public String withoutAnnotation = "Source";
 }
