@@ -19,6 +19,9 @@ public class EqualizerTest {
 
         Equalizer.equalize(source, target);
 
+        System.out.println(source.sourceShouldFillTargetValues);
+        System.out.println(target.targetShouldFillTargetValues);
+
         assertEquals(source.sourceShouldFillTargetValues, target.targetShouldFillTargetValues);
     }
 
@@ -51,5 +54,18 @@ public class EqualizerTest {
 
         assertEquals(source.type, target.type);
         assertEquals(source.type.test, target.type.test);
+    }
+
+    @Test
+    public void shouldFillInverseOrder() throws IllegalAccessException, NoSuchFieldException {
+        TargetDto target = new TargetDto();
+        SourceDto source = new SourceDto();
+
+        Equalizer.equalize(target, source);
+
+        System.out.println(source.sourceShouldFillTargetValues);
+        System.out.println(target.targetShouldFillTargetValues);
+
+        assertEquals(source.sourceShouldFillTargetValues, target.targetShouldFillTargetValues);
     }
 }
