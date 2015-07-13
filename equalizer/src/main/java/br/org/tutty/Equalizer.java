@@ -42,7 +42,9 @@ public class Equalizer {
     }
 
     public static void fillField(Field sourceField, Object source, Field targetField, Object target) throws IllegalAccessException, NoSuchFieldException {
+            sourceField.setAccessible(true);
             Object value = sourceField.get(source);
+
             targetField.setAccessible(true);
             targetField.set(target, value);
     }
