@@ -19,8 +19,37 @@ public class EqualizerTest {
 
         Equalizer.equalize(source, target);
 
-        assertEquals(source.test, target.test);
-        assertNotEquals(source.differentSource, target.differentTarget);
-        assertEquals(source.test2, target.test2);
+        assertEquals(source.sourceShouldFillTargetValues, target.targetShouldFillTargetValues);
+    }
+
+    @Test
+    public void shouldDontFillDistinctNames() throws IllegalAccessException, NoSuchFieldException {
+        TargetDto target = new TargetDto();
+        SourceDto source = new SourceDto();
+
+        Equalizer.equalize(source, target);
+
+        assertNotEquals(source.sourceShouldDontFillDistinctNames, target.targetShouldDontFillDistinctNames);
+    }
+
+    @Test
+    public void shouldIgnoreFieldName() throws IllegalAccessException, NoSuchFieldException {
+        TargetDto target = new TargetDto();
+        SourceDto source = new SourceDto();
+
+        Equalizer.equalize(source, target);
+
+        assertNotEquals(source.shouldIgnoreFieldName, target.shouldIgnoreFieldName);
+    }
+
+    @Test
+    public void shouldFillObjectWithTypeSpecific() throws IllegalAccessException, NoSuchFieldException {
+        TargetDto target = new TargetDto();
+        SourceDto source = new SourceDto();
+
+        Equalizer.equalize(source, target);
+
+        assertEquals(source.type, target.type);
+        assertEquals(source.type.test, target.type.test);
     }
 }
