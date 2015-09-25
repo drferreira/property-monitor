@@ -1,4 +1,4 @@
-TESTE - JENKINS : property-monitor
+property-monitor
 ================
 
 Property-monitor é uma ferramenta que tem como objetivo facilitar o processo de monitoramento de fields de uma objecto, seja ele uma entidade, pojo, controller etc.
