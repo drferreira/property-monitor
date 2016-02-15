@@ -6,10 +6,10 @@
 	<packaging>jar</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>equalizer</name>
-	<url>http://maven.apache.org</url>
 
 	<scm>
 		<connection>scm:git:git@github.com:drferreira/property-monitor.git</connection>
+		<developerConnection>scm:git:git@github.com:drferreira/property-monitor.git</developerConnection>
 	</scm>
 
 	<distributionManagement>
@@ -58,6 +58,14 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.4</version>
+				<configuration>
+					<tag>${version}</tag>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
